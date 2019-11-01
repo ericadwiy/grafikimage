@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL;
 import javax.microedition.khronos.opengles.GL10;
 
-public class Segitiga implements GLSurfaceView.Renderer {
+public class segitiga implements GLSurfaceView.Renderer {
     private FloatBuffer triangle;
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         gl.glClearColor(0.0f, 0.0f, 0.9f, 1.0f);
@@ -30,11 +30,11 @@ public class Segitiga implements GLSurfaceView.Renderer {
         gl.glViewport(0, 0, width, height);
     }
     private void initShapes(){
-    float vertices[] = {
-            -0.6f, -0.5f, 0,
-            0.6f, -0.5f, 0,
-            0.0f, 0.5f,0
-    };
+        float vertices[] = {
+                -0.6f, -0.5f, 0,
+                0.6f, -0.5f, 0,
+                0.0f, 0.5f,0
+        };
         ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
         vbb.order(ByteOrder.nativeOrder());
         triangle = vbb.asFloatBuffer();
